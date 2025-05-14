@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+.scene {
+  width: 100vw;
+  height: 100vh;
+  background: url('character-bg.png') no-repeat left center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 80px;
+  padding-top: 40px;
+}
+
+#top-text {
+  font-size: 15px;
+  color: #e255aa;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ff99cc;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #e255aa;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 300px }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #e255aa }
+}
+
+#heart {
+  display: grid;
+  grid-template-columns: repeat(11, 10px);
+  grid-gap: 1px;
+  margin-bottom: 10px;
+}
+
+.heart-cell {
+  width: 10px;
+  height: 10px;
+  font-size: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+#text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff66cc;
+  text-shadow: 0 0 6px #ff99cc;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ff99cc, 0 0 10px #ff66cc;
+  }
+  to {
+    text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff99cc;
+  }
+}
